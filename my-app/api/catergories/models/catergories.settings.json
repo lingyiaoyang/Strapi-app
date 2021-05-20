@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catergories",
+  "info": {
+    "name": "Catergories",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string"
+    },
+    "movies": {
+      "via": "catergories",
+      "collection": "movie",
+      "dominant": true
+    }
+  }
+}
