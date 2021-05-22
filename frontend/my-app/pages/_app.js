@@ -7,17 +7,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import theme from '../theme/theme';
 import styled from '@emotion/styled';
 import getConfig from 'next/config';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
+import { QueryClientProvider, QueryClient } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const MyApp = ({ Component, pageProps, navigation }) => {
   // console.log(navigation);
 
   return (
     <>
+      <DefaultSeo {...SEO} />
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         {/* <Header /> */}
         <Navigation navigations={navigation} />
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </ThemeProvider>
     </>
   );
