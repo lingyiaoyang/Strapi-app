@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 // import './card.css';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   CardText,
   Card,
@@ -29,10 +30,10 @@ function Card_Movie({ movie }) {
     <CardStyled>
       <Card className='card '>
         {movie.movie_img && (
-          <CardImg
+          <Image
             className='card-img'
-            top
-            width='100%'
+            width={movie.movie_img.width}
+            height={movie.movie_img.height}
             src={API_URL + movie.movie_img.url}
             alt='Card image cap'
           />

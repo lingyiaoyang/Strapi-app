@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_authentications",
+  "info": {
+    "name": "UserAuthentication"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Username": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "password"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Confirmed": {
+      "type": "boolean"
+    }
+  }
+}

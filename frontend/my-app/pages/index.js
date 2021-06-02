@@ -1,23 +1,32 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Card from '../component/Card';
+import Image from 'next/image';
 import { Flex, Box } from 'reflexbox';
 
 const index = (props) => {
   console.log(props);
   return (
-    <CardFlex>
-      {props.movies.map((movie) => {
-        return (
-          <Box
-            width={['320px', '300px', '250px', '230px', '200px']}
-            key={movie.id}
-          >
-            <Card movie={movie} />
-          </Box>
-        );
-      })}
-    </CardFlex>
+    <>
+      <Image
+        src='/Image/high-quality.jpg'
+        layout='responsive'
+        width={2400}
+        height={1600}
+      ></Image>
+      <CardFlex>
+        {props.movies.map((movie) => {
+          return (
+            <Box
+              width={['320px', '300px', '250px', '230px', '200px']}
+              key={movie.id}
+            >
+              <Card movie={movie} />
+            </Box>
+          );
+        })}
+      </CardFlex>
+    </>
   );
 };
 
