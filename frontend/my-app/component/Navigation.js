@@ -36,6 +36,7 @@ const Navigation = ({ navigations }) => {
             Movie Now
           </a>
         </Link>
+        
         <NavbarToggler onClick={toggle} />
         <Collapse className='collapse' isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
